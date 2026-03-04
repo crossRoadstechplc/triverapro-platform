@@ -1,15 +1,46 @@
 import { useState } from "react";
 import ScrollReveal from "./ScrollReveal";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
 
 const ContactSection = () => {
   const { toast } = useToast();
-  const [form, setForm] = useState({ name: "", organization: "", email: "", country: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({ title: "Inquiry submitted", description: "We will be in touch shortly." });
-    setForm({ name: "", organization: "", email: "", country: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          name: form.name,
+          email: form.email,
+          message: form.message,
+          source:"TriveraPro",
+          to_email: import.meta.env.VITE_RECIPIENT_EMAIL
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      toast({ 
+        title: "Message sent successfully!", 
+        description: "We'll get back to you soon." 
+      });
+      setForm({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      toast({ 
+        title: "Failed to send message", 
+        description: "Please try again later.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -22,16 +53,16 @@ const ContactSection = () => {
 
         <ScrollReveal delay={0.15}>
           <form onSubmit={handleSubmit} className="space-y-5">
-            {(["name", "organization", "email", "country"] as const).map((field) => (
+            {["name", "email"].map((field) => (
               <div key={field}>
                 <label className="block text-sm font-medium text-foreground mb-1.5 capitalize">{field}</label>
                 <input
                   type={field === "email" ? "email" : "text"}
-                  required={field !== "organization"}
-                  value={form[field]}
+                  required
+                  value={form[field as keyof typeof form]}
                   onChange={(e) => setForm({ ...form, [field]: e.target.value })}
                   className="w-full px-4 py-3 rounded-md border border-border bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-secondary/50 transition"
-                  placeholder={field === "email" ? "you@organization.com" : ""}
+                  placeholder={field === "email" ? "you@organization.com" : "Your name"}
                 />
               </div>
             ))}
@@ -47,9 +78,10 @@ const ContactSection = () => {
             </div>
             <button
               type="submit"
-              className="w-full px-8 py-3.5 bg-secondary text-secondary-foreground font-semibold rounded-md hover:bg-secondary/90 transition-colors"
+              disabled={isSubmitting}
+              className="w-full px-8 py-3.5 bg-secondary text-secondary-foreground font-semibold rounded-md hover:bg-secondary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Submit Inquiry
+              {isSubmitting ? "Sending..." : "Send Message"}
             </button>
           </form>
         </ScrollReveal>

@@ -1,73 +1,100 @@
-# Welcome to your Lovable project
+# TriveraPro Platform
 
-## Project info
+Patent-pending integrated renewable infrastructure platform for coffee-producing regions.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Overview
 
-## How can I edit this code?
+TriveraPro is a comprehensive renewable energy solution that combines:
+- Solar power generation
+- Biomass conversion systems
+- Regenerative soil restoration
+- Sustainable infrastructure for coffee-producing regions
 
-There are several ways of editing your application.
+## Technology Stack
 
-**Use Lovable**
+- **Frontend**: React 18 with TypeScript
+- **Build Tool**: Vite
+- **Styling**: TailwindCSS
+- **UI Components**: Radix UI + shadcn/ui
+- **Animations**: Framer Motion
+- **Forms**: React Hook Form with Zod validation
+- **Email Service**: EmailJS
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
 
-**Use your preferred IDE**
+### Installation
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+1. Clone the repository
+```bash
+git clone https://github.com/your-org/triverapro-platform.git
+cd triverapro-platform
+```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+2. Install dependencies
+```bash
+npm install
+```
 
-Follow these steps:
+3. Set up environment variables
+```bash
+cp .env.example .env
+# Add your EmailJS configuration to .env
+```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+4. Start the development server
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Environment Variables
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Create a `.env` file in the root directory:
 
-**Use GitHub Codespaces**
+```
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
+VITE_RECIPIENT_EMAIL=contact@triverapro.com
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Deployment
 
-## What technologies are used for this project?
+The application is configured for deployment on:
+- **Primary Domain**: triverapro.com
+- **Secondary Domain**: triverapro.org
 
-This project is built with:
+### Build for Production
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```bash
+npm run build
+```
 
-## How can I deploy this project?
+### Preview Production Build
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+```bash
+npm run preview
+```
 
-## Can I connect a custom domain to my Lovable project?
+## Features
 
-Yes, you can!
+- **Responsive Design**: Optimized for all devices
+- **SEO Optimized**: Meta tags, Open Graph, and Twitter cards
+- **Contact Form**: Integrated with EmailJS for direct communication
+- **Smooth Animations**: Scroll-reveal effects and micro-interactions
+- **Modern UI**: Clean, professional interface with TailwindCSS
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Scripts
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+- `npm run test` - Run tests
+
+## License
+
+© 2025 TriveraPro™. All rights reserved.

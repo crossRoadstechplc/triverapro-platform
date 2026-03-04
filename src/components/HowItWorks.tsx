@@ -14,7 +14,14 @@ const HowItWorks = () => (
     <div className="section-container">
       <ScrollReveal>
         <p className="text-sm font-semibold tracking-widest text-secondary uppercase mb-4">Process</p>
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-16">How It Works</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">How It Works</h2>
+        <div className="flex flex-wrap gap-3 mb-16">
+          {["Closed-loop design", "Modular scalability", "Off-grid capability"].map((feature, i) => (
+            <span key={i} className="px-4 py-2 bg-secondary/10 text-secondary font-semibold rounded-full text-sm">
+              {feature}
+            </span>
+          ))}
+        </div>
       </ScrollReveal>
 
       <div className="relative">

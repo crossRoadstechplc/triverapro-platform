@@ -5,7 +5,8 @@ const steps = [
   { icon: ClipboardCheck, title: "Site Assessment", desc: "Technical evaluation of agricultural communities and infrastructure requirements." },
   { icon: Wrench, title: "Installation", desc: "Deployment of modular TriveraPro™ infrastructure components." },
   { icon: GraduationCap, title: "Operator Training", desc: "Training programs for system operation and management." },
-  { icon: Activity, title: "Maintenance & Monitoring", desc: "Ongoing system performance monitoring and maintenance." },
+  { icon: Wrench, title: "Maintenance Training", desc: "Skill development for ongoing system upkeep." },
+  { icon: Activity, title: "Monitoring & Evaluation", desc: "Ongoing system performance tracking." },
 ];
 
 const DeploymentModel = () => (
@@ -13,10 +14,13 @@ const DeploymentModel = () => (
     <div className="section-container">
       <ScrollReveal>
         <p className="text-sm font-semibold tracking-widest text-accent uppercase mb-4">Implementation</p>
-        <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-12">Deployment Model</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-6">Deployment Model</h2>
+        <p className="text-lg text-primary-foreground/80 mb-12 max-w-2xl">
+          TriveraPro™ systems are deployed under structured implementation programs led by SPX.
+        </p>
       </ScrollReveal>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
         {steps.map((step, i) => (
           <ScrollReveal key={step.title} delay={i * 0.1}>
             <div className="text-center">
@@ -34,10 +38,11 @@ const DeploymentModel = () => (
       <ScrollReveal delay={0.4}>
         <div className="text-center">
           <a
-            href="#contact"
+            href="https://www.3rdharvest.com"
+            target="_blank"
             className="inline-flex px-8 py-3.5 bg-accent text-accent-foreground font-semibold rounded-md hover:bg-accent/90 transition-colors"
           >
-            Explore the Third Harvest Program
+            Explore The Third Harvest Program
           </a>
         </div>
       </ScrollReveal>

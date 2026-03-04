@@ -8,10 +8,10 @@ const AboutSPX = () => (
         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">About SPX</h2>
         <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
           <p>SPX is an origin-based infrastructure and systems design firm operating at the intersection of agriculture, renewable energy, and regenerative value chains.</p>
-          <p>SPX develops integrated platforms that enable decentralized infrastructure deployment in agricultural regions.</p>
         </div>
         <a
-          href="#"
+          href="https://www.spxafrica.com/"
+          target="_blank"
           className="inline-flex mt-8 px-8 py-3.5 bg-primary text-primary-foreground font-semibold rounded-md hover:bg-primary/90 transition-colors"
         >
           Visit SPX Website

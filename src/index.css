@@ -108,3 +108,29 @@
     @apply bg-clip-text text-transparent bg-gradient-to-r from-secondary to-accent;
   }
 }
+
+@layer utilities {
+  .animate-rotate1 {
+    transform: translate(0, 0);
+    animation: rotate1 2s infinite;
+  }
+  .animate-rotate2 {
+    transform: translate(0px, 40px);
+    animation: rotate2 2s infinite;
+  }
+}
+
+@keyframes rotate1 {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(40px, 0); }
+  50% { transform: translate(40px, 40px); }
+  75% { transform: translate(0, 40px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes rotate2 {
+  0%, 100% { transform: translate(0px, 40px); }
+  25% { transform: translate(-40px, 40px); }
+  50% { transform: translate(-40px, 0px); }
+  75% { transform: translate(0px, 0px); }
+}

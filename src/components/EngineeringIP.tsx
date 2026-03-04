@@ -12,8 +12,7 @@ const EngineeringIP = () => (
         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">Engineering & Intellectual Property</h2>
         <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
           <p>TriveraPro™ is a proprietary integration platform developed by SPX. <span className="font-semibold text-foreground">Patent pending.</span></p>
-          <p>The system architecture, integration design, and deployment methodology are protected under the TriveraPro™ technology platform.</p>
-          <p>This platform integrates renewable energy, agricultural processing infrastructure, and biomass conversion into a closed-loop system designed for decentralized rural deployment.</p>
+          <p>System design, integration architecture, and deployment methodology are protected under the TriveraPro™ brand.</p>
         </div>
       </ScrollReveal>
     </div>

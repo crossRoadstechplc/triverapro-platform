@@ -20,10 +20,13 @@ const PlatformOverview = () => (
             A Unified Infrastructure System
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-            TriveraPro™ is an integrated infrastructure platform engineered by SPX to transform how coffee-producing communities process, power, and regenerate.
+            TriveraPro™ is an integrated infrastructure system engineered by SPX to transform how coffee-producing communities process, power, and regenerate.
           </p>
-          <p className="text-muted-foreground text-lg leading-relaxed">
-            The platform connects solar energy, coffee processing infrastructure, biomass conversion, biogas generation, and nutrient recovery into a unified decentralized system.
+          <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+            It connects solar energy, coffee processing, biomass conversion, and compost regeneration into a unified platform.
+          </p>
+          <p className="text-foreground font-medium text-base">
+            Manufactured through qualified partners. Integrated under SPX system architecture.
           </p>
         </ScrollReveal>
 
